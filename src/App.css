@@ -2,6 +2,3 @@
   margin: 0;
   padding: 0;
 }
-.example::-webkit-scrollbar {
-  display: none;
-}

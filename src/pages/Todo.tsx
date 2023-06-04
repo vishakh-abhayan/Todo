@@ -63,12 +63,12 @@ function Todo() {
           <div className="todo_card">
             <h1>hello</h1>
           </div>
-          {/* <div className="todo_card">
+          <div className="todo_card">
             <h1>hello</h1>
           </div>
           <div className="todo_card">
             <h1>hello</h1>
-          </div> */}
+          </div>
         </div>
         <div className="todo_nav">
           <p className="nav_act">Active</p>
