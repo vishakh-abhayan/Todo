@@ -1,0 +1,146 @@
+.app_todo {
+  height: 100vh;
+  /* background-color: #f1f1f1; */
+  background-image: linear-gradient(
+    to right top,
+    #fff0ff,
+    #f6f2ff,
+    #ebf5ff,
+    #e2f7ff,
+    #ddf9ff
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.todo_cover {
+  height: 14rem;
+  margin-top: 2rem;
+  width: 80rem;
+  background-color: black;
+  background: linear-gradient(
+      270deg,
+      rgba(0, 219, 222, 0.5) 0%,
+      rgba(252, 0, 255, 0.6) 100%
+    ),
+    url("../assets/ken-cheung-KonWFWUaAuk-unsplash.jpg");
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.app_title {
+  color: #e2e2e2;
+  font-family: sans-serif;
+  font-size: 40px;
+  margin-left: 250px;
+  margin-top: 30px;
+}
+
+.input_contain {
+  display: flex;
+  justify-content: center;
+}
+
+.do_input {
+  width: 35rem;
+  height: 4rem;
+  border-color: rgba(105, 105, 105, 0.14);
+  border-width: 20px;
+  border-style: none;
+  border-radius: 5px;
+  position: relative;
+  top: -25px;
+  box-shadow: gray 10px;
+  z-index: 1;
+  font-size: 2rem;
+  font-family: fantasy;
+  outline: none;
+  padding-left: 1rem;
+  color: rgb(144, 142, 142);
+  box-shadow: 10px 10px 10px rgba(158, 158, 158, 0.2);
+}
+.todo_check {
+  background-color: #ffffff;
+  border-width: 3px;
+  border-style: solid;
+  border-color: rgba(225, 225, 225, 0.655);
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  position: relative;
+  top: -10px;
+  left: -50px;
+  z-index: 5;
+}
+.todo_check:hover {
+  background: linear-gradient(
+    270deg,
+    rgba(0, 219, 222, 0.5) 0%,
+    rgba(252, 0, 255, 0.6) 100%
+  );
+  border: none;
+  height: 29px;
+  width: 29px;
+}
+
+.todo_section {
+  width: 35rem;
+  max-height: 450px;
+  border-radius: 10px;
+  display: flex;
+  /* overflow: hidden; */
+  flex-direction: column;
+  align-items: center;
+}
+.card_contain {
+  width: 35rem;
+  max-height: 300px;
+  border-radius: 5px;
+  overflow-y: scroll;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  box-shadow: 10px 10px 10px rgba(158, 158, 158, 0.2);
+}
+.todo_card {
+  z-index: 4;
+  height: 4rem;
+  width: 100%;
+  background-color: #f0f0f0;
+  border: 1px solid rgb(174, 174, 174);
+  border-top: hidden;
+  border-left: hidden;
+  border-right: hidden;
+  display: flex;
+  align-items: end;
+  padding-left: 20px;
+  font-family: fantasy;
+  font-size: 12px;
+  color: rgb(144, 142, 142);
+}
+
+.todo_nav {
+  height: 4rem;
+  width: 35rem;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 1;
+  box-shadow: 10px 10px 10px rgba(158, 158, 158, 0.2);
+  background-color: #f0f0f0;
+  font-size: 24px;
+  font-family: monospace;
+  color: rgb(130, 216, 129);
+}
+.nav_act {
+  color: rgb(216, 177, 129);
+}
+.nav_cop {
+  color: rgb(130, 216, 129);
+}
