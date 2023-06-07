@@ -1,5 +1,5 @@
 function Singup() {
-  return <div>Singup</div>;
+  return <h1>hello</h1>;
 }
 
 export default Singup;

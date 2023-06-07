@@ -1,0 +1,182 @@
+.main_div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(
+    -45deg,
+    #ee7652a3,
+    #e73c7e9e,
+    #23a5d593,
+    #23d5ab9c
+  );
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.log_board {
+  width: min(450px, 80vw);
+  height: 500px;
+  background: radial-gradient(
+    rgba(255, 255, 255, 0.436) 30%,
+    rgba(255, 255, 255, 0.432)
+  );
+  border-radius: 20px;
+  box-shadow: 5px 5px 10px rgba(98, 98, 98, 0.41), -1px -1px 2px #fff,
+    1px 1px 2px #555;
+  backdrop-filter: blur(5px);
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  overflow: hidden;
+  transform: translateY(25px);
+  transition: transform 0.25s;
+}
+.log_board h1 {
+  color: rgb(73, 70, 70);
+  font-family: "Courier New", Courier, monospace;
+  font-size: 40px;
+  margin-top: 30px;
+}
+
+.input_field {
+  margin-top: 20px;
+  width: 350px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.input_field input {
+  font-size: 20px;
+  padding: 2px 0px;
+  height: 26px;
+  border: none;
+  border-bottom: solid 1px rgb(66, 66, 66);
+  background-color: transparent;
+  width: 350px;
+  box-sizing: border-box;
+  transition: all 0.3s linear;
+  color: #545454;
+  font-weight: 400;
+  &:focus {
+    border-bottom: solid 1px rgb(111, 111, 111);
+    outline: 0;
+    box-shadow: 0 2px 6px -8px;
+    background-color: transparent;
+  }
+}
+
+.log_buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  width: 370px;
+}
+
+.button_log {
+  align-items: center;
+  appearance: none;
+  background-image: radial-gradient(
+    100% 100% at 100% 0,
+    #5adaff 0,
+    #5468ff 100%
+  );
+  border: 0;
+  border-radius: 6px;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, rgba(58, 65, 111, 0.5) 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono", monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow 0.15s, transform 0.15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow, transform;
+  font-size: 18px;
+}
+
+.button_log:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.button_log:active {
+  box-shadow: #3c4fe0 0 3px 7px inset;
+  transform: translateY(2px);
+}
+.button_sing {
+  align-items: center;
+  appearance: none;
+  background-image: radial-gradient(
+    100% 100% at 100% 0,
+    #ce5aff 0,
+    #ff54c3 100%
+  );
+  border: 0;
+  border-radius: 6px;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, rgba(58, 65, 111, 0.5) 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono", monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow 0.15s, transform 0.15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow, transform;
+  font-size: 18px;
+}
+
+.button_sing:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #e03c88 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.button_sing:active {
+  box-shadow: #3c4fe0 0 3px 7px inset;
+  transform: translateY(2px);
+}

@@ -1,7 +1,6 @@
 import "./Todo.css";
 
 interface todo {
-  // index: number;
   value: string;
 }
 
@@ -10,27 +9,21 @@ const userTodo: todo[] = [
     value: "morning exrices",
   },
   {
-    // index: 1,
     value: "morning exrices",
   },
   {
-    // index: 2,
     value: "morning exrices",
   },
   {
-    // index: 3,
     value: "morning exrices",
   },
   {
-    // index: 4,
     value: "morning exrices",
   },
   {
-    // index: 5,
     value: "morning exrices",
   },
   {
-    // index: 6,
     value: "morning exrices",
   },
 ];
@@ -47,32 +40,16 @@ function Todo() {
       </div>
       <div className="todo_section">
         <div className="card_contain">
-          {}
-          <div className="todo_card">
-            <h1>hello</h1>
-          </div>
-          <div className="todo_card">
-            <h1>hello</h1>
-          </div>
-          <div className="todo_card">
-            <h1>hello</h1>
-          </div>
-          <div className="todo_card">
-            <h1>hello</h1>
-          </div>
-          <div className="todo_card">
-            <h1>hello</h1>
-          </div>
-          <div className="todo_card">
-            <h1>hello</h1>
-          </div>
-          <div className="todo_card">
-            <h1>hello</h1>
-          </div>
+          {userTodo.map((value, index) => (
+            <div key={index} className="todo_card">
+              <h1>{value.value}</h1>
+            </div>
+          ))}
         </div>
         <div className="todo_nav">
           <p className="nav_act">Active</p>
           <p className="nav_cop">Completed</p>
+          <p className="nav_cop">Edit</p>
         </div>
       </div>
     </div>
