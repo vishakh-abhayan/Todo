@@ -29,6 +29,7 @@
 .log_board {
   width: min(450px, 80vw);
   height: 500px;
+  box-sizing: border-box;
   background: radial-gradient(
     rgba(255, 255, 255, 0.436) 30%,
     rgba(255, 255, 255, 0.432)
@@ -46,7 +47,16 @@
   transition: transform 0.25s;
 }
 .log_board h1 {
-  color: rgb(73, 70, 70);
+  /* color: conic-gradient(
+    #553c9a 0%,
+    #553c9a 33%,
+    #ee4b2b 33%,
+    #ee4b2b 66%,
+    #00c2cb 66%,
+    #00c2cb 99%
+  ); */
+  color: #4e4b4b;
+
   font-family: "Courier New", Courier, monospace;
   font-size: 40px;
   margin-top: 30px;
@@ -83,7 +93,7 @@
 
 .log_buttons {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   margin-top: 20px;
   width: 370px;
 }
