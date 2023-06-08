@@ -17,7 +17,6 @@ function Login() {
             id="username"
             autoComplete="off"
           />
-          {/* <input placeholder="@email" type="email" name="email" id="email" /> */}
           <input
             placeholder="password"
             type="password"

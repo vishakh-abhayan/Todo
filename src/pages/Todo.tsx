@@ -1,32 +1,5 @@
 import "./Todo.css";
-
-interface todo {
-  value: string;
-}
-
-const userTodo: todo[] = [
-  {
-    value: "morning exrices",
-  },
-  {
-    value: "morning exrices",
-  },
-  {
-    value: "morning exrices",
-  },
-  {
-    value: "morning exrices",
-  },
-  {
-    value: "morning exrices",
-  },
-  {
-    value: "morning exrices",
-  },
-  {
-    value: "morning exrices",
-  },
-];
+// import { useState, useEffect } from "react";
 
 function Todo() {
   return (
@@ -36,15 +9,13 @@ function Todo() {
       </div>
       <div className="input_contain">
         <input className="do_input" type="text" />
-        <div className="todo_check"></div>
+        <button className="todo_check"></button>
       </div>
       <div className="todo_section">
         <div className="card_contain">
-          {userTodo.map((value, index) => (
-            <div key={index} className="todo_card">
-              <h1>{value.value}</h1>
-            </div>
-          ))}
+          <div className="todo_card">
+            <h1></h1>
+          </div>
         </div>
         <div className="todo_nav">
           <p className="nav_act">Active</p>
