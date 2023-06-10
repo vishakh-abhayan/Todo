@@ -96,9 +96,9 @@ function Singup() {
             <Link to="/" className="button_log">
               <BsArrowLeft /> back to login
             </Link>
-            <Link to="/" type="submit" className="button_sing">
+            <button type="submit" className="button_sing">
               Signup
-            </Link>
+            </button>
           </div>
         </form>
       </div>
