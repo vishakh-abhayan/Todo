@@ -1,6 +1,7 @@
 import { BsArrowLeft, BsPersonFillAdd } from "react-icons/bs";
 import { useState } from "react";
-// import React, { useState } from 'react';
+import { Link } from "react-router-dom";
+import "./Auth.css";
 
 interface Todo {
   id: number;
@@ -11,6 +12,7 @@ interface Todo {
 interface User {
   username: string;
   password: string;
+  isLoggedIn: boolean;
   todos: Todo[];
 }
 
@@ -18,6 +20,7 @@ function Singup() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [formError, setFormError] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -33,22 +36,25 @@ function Singup() {
   const handleSignup = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    // Check if any required field is empty
+    if (!username || !email || !password) {
+      setFormError(true);
+      return;
+    }
+
     const newUser: User = {
       username: username,
       password: password,
+      isLoggedIn: false,
       todos: [],
     };
 
-    // Save the new user to local storage
     localStorage.setItem(username, JSON.stringify(newUser));
 
-    // Reset the form inputs
     setUsername("");
     setEmail("");
     setPassword("");
-
-    // Display a success message or navigate to the login page
-    // You can implement this according to your specific requirements
+    setFormError(false);
   };
 
   return (
@@ -65,7 +71,7 @@ function Singup() {
             name="username"
             value={username}
             onChange={handleInputChange}
-            autoComplete="off"
+            autoComplete="newUser"
           />
           <input
             placeholder="Email"
@@ -81,14 +87,18 @@ function Singup() {
             name="password"
             value={password}
             onChange={handleInputChange}
+            autoComplete="new-password"
           />
+          {formError && (
+            <p className="error-message">Please fill in all fields.</p>
+          )}
           <div className="log_buttons">
-            <button className="button_log">
+            <Link to="/" className="button_log">
               <BsArrowLeft /> back to login
-            </button>
-            <button type="submit" className="button_sing">
+            </Link>
+            <Link to="/" type="submit" className="button_sing">
               Signup
-            </button>
+            </Link>
           </div>
         </form>
       </div>

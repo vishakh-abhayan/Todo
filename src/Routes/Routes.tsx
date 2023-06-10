@@ -1,19 +1,19 @@
-import { createBrowserRouter, RouterProvider, Link } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Login from "../pages/Login";
 import Singup from "../pages/Singup";
 import Todo from "../pages/Todo";
 
 const router = createBrowserRouter([
   {
-    path: "/log",
+    path: "/",
     element: <Login />,
   },
   {
-    path: "/sing",
+    path: "/auth",
     element: <Singup />,
   },
   {
-    path: "/",
+    path: "/todo",
     element: <Todo />,
   },
 ]);

@@ -190,3 +190,8 @@
   box-shadow: #3c4fe0 0 3px 7px inset;
   transform: translateY(2px);
 }
+
+.error-message {
+  color: rgb(225, 21, 21);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
