@@ -67,7 +67,7 @@ function Login() {
           {errorMessage && <p className="error-message">{errorMessage}</p>}
           <div className="log_buttons">
             <button type="submit" className="button_log">
-              Get Started
+              Login
             </button>
             <Link to="/auth" className="button_sing">
               Create an Account
