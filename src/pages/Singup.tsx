@@ -2,6 +2,7 @@ import { BsArrowLeft, BsPersonFillAdd } from "react-icons/bs";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Auth.css";
+import Todo from "./Todo";
 
 interface Todo {
   id: number;
@@ -33,7 +34,7 @@ function Singup() {
     }
   };
 
-  const handleSignup = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSignup = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     // Check if any required field is empty
@@ -42,14 +43,22 @@ function Singup() {
       return;
     }
 
-    const newUser: User = {
+    const newUser = {
       username: username,
       password: password,
       isLoggedIn: false,
       todos: [],
     };
 
-    localStorage.setItem("user", JSON.stringify(newUser));
+    // Retrieve existing array from localStorage
+    const existingUsers = JSON.parse(localStorage.getItem("users") || "[]");
+    console.log(existingUsers);
+
+    // Push newUser to the existing array
+    existingUsers.push(newUser);
+
+    // Store the updated array in localStorage
+    localStorage.setItem("users", JSON.stringify(existingUsers));
 
     setUsername("");
     setEmail("");

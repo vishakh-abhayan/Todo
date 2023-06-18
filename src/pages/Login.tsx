@@ -23,12 +23,16 @@ function Login() {
     e.preventDefault();
 
     // Check if the entered username exists in local storage
-    const user = localStorage.getItem("user");
+    const user = localStorage.getItem("users");
     console.log(user, "&&&");
 
     if (user) {
       let parsedUser = JSON.parse(user);
+      console.log(parsedUser);
 
+      parsedUser.map((value: []) => {
+        console.log(value, "***");
+      });
       // Check if the entered password matches the stored password
       if (parsedUser.password === password) {
         // Update the isLoggedIn value in sessionStorage
