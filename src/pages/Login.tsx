@@ -10,6 +10,8 @@ function Login() {
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
+    console.log(name, value, "((((");
+
     if (name === "username") {
       setUsername(value);
     } else if (name === "password") {
@@ -21,7 +23,8 @@ function Login() {
     e.preventDefault();
 
     // Check if the entered username exists in local storage
-    const user = localStorage.getItem(username);
+    const user = localStorage.getItem("user");
+    console.log(user, "&&&");
 
     if (user) {
       let parsedUser = JSON.parse(user);
@@ -29,7 +32,8 @@ function Login() {
       // Check if the entered password matches the stored password
       if (parsedUser.password === password) {
         // Update the isLoggedIn value in sessionStorage
-        sessionStorage.setItem("isLoggedIn", "true");
+        parsedUser.isLoggedIn = true;
+        localStorage.setItem("user", JSON.stringify(parsedUser));
         navigate("/todo");
       } else {
         // Incorrect password

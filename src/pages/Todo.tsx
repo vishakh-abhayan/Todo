@@ -1,18 +1,7 @@
 import "./Todo.css";
 import { useNavigate } from "react-router-dom";
-// import { useState, useEffect } from "react";
 
 function Todo() {
-  const navigate = useNavigate();
-
-  // Check if the user is logged in
-  const isLoggedIn = sessionStorage.getItem("isLoggedIn");
-  // Redirect to login if not logged in
-  if (!isLoggedIn || isLoggedIn === "false") {
-    navigate("/"); // Redirect to login if not logged in
-    return null; // Render nothing if not logged in
-  }
-
   return (
     <div className="app_todo">
       <div className="todo_cover">

@@ -49,7 +49,7 @@ function Singup() {
       todos: [],
     };
 
-    localStorage.setItem(username, JSON.stringify(newUser));
+    localStorage.setItem("user", JSON.stringify(newUser));
 
     setUsername("");
     setEmail("");
