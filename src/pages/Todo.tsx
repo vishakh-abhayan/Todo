@@ -1,7 +1,32 @@
 import "./Todo.css";
 import { useNavigate } from "react-router-dom";
 
+interface Todo {
+  id: number;
+  title: string;
+  completed: boolean;
+}
+
+interface User {
+  username: string;
+  password: string;
+  isLoggedIn: boolean;
+  todos: Todo[];
+}
+
 function Todo() {
+  const navigate = useNavigate();
+  const user = localStorage.getItem("users");
+  if (user) {
+    let parsedUser = JSON.parse(user);
+    parsedUser.map((value: User) => {
+      if (value.isLoggedIn == false) {
+        navigate("/");
+      }
+    });
+  } else {
+    navigate("/");
+  }
   return (
     <div className="app_todo">
       <div className="todo_cover">

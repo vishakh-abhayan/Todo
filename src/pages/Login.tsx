@@ -2,6 +2,19 @@ import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { BsPersonFillCheck } from "react-icons/bs";
 
+interface Todo {
+  id: number;
+  title: string;
+  completed: boolean;
+}
+
+interface User {
+  username: string;
+  password: string;
+  isLoggedIn: boolean;
+  todos: Todo[];
+}
+
 function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -10,7 +23,6 @@ function Login() {
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    console.log(name, value, "((((");
 
     if (name === "username") {
       setUsername(value);
@@ -22,30 +34,28 @@ function Login() {
   const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    // Check if the entered username exists in local storage
     const user = localStorage.getItem("users");
-    console.log(user, "&&&");
-
+    console.log(user);
     if (user) {
       let parsedUser = JSON.parse(user);
       console.log(parsedUser);
-
-      parsedUser.map((value: []) => {
-        console.log(value, "***");
+      parsedUser.map((value: User) => {
+        console.log(value);
+        if (value.username === username) {
+          console.log(value.password, "***");
+          if (value.password === password) {
+            value.isLoggedIn = true;
+            localStorage.setItem("users", JSON.stringify(parsedUser));
+            navigate("/todo");
+          } else {
+            setErrorMessage("Incorrect password");
+          }
+        } else {
+          setErrorMessage("User does not exist");
+        }
       });
-      // Check if the entered password matches the stored password
-      if (parsedUser.password === password) {
-        // Update the isLoggedIn value in sessionStorage
-        parsedUser.isLoggedIn = true;
-        localStorage.setItem("user", JSON.stringify(parsedUser));
-        navigate("/todo");
-      } else {
-        // Incorrect password
-        setErrorMessage("Incorrect password");
-      }
     } else {
-      // User does not exist
-      setErrorMessage("User does not exist");
+      navigate("/auth");
     }
   };
 

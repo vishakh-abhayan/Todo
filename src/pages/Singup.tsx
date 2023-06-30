@@ -43,7 +43,7 @@ function Singup() {
       return;
     }
 
-    const newUser = {
+    const newUser: User = {
       username: username,
       password: password,
       isLoggedIn: false,
