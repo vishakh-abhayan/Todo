@@ -1,6 +1,6 @@
 import "./Todo.css";
 import { useNavigate, useParams } from "react-router-dom";
-import { BsPersonFillCheck } from "react-icons/bs";
+import { BsPersonFillCheck, BsDashSquare } from "react-icons/bs";
 
 interface Todo {
   id: number;
@@ -37,7 +37,15 @@ function Todo() {
   }
 
   const handleLogout = () => {
-    const userData: string | null = localStorage.getItem("users");
+    const userData: any = localStorage.getItem("users");
+    let pasrsedData: User[] = JSON.parse(userData);
+    pasrsedData.map((value: User) => {
+      if (value.isLoggedIn == true) {
+        value.isLoggedIn = false;
+        localStorage.setItem("users", JSON.stringify(pasrsedData));
+        navigate("/");
+      }
+    });
   };
 
   return (
@@ -56,6 +64,7 @@ function Todo() {
           </div>
           <div className="todo_card">
             <h1></h1>
+            <BsDashSquare />
           </div>
           <div className="todo_card">
             <h1></h1>
