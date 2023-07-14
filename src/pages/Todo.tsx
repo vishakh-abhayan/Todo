@@ -1,5 +1,6 @@
 import "./Todo.css";
 import { useNavigate, useParams } from "react-router-dom";
+import { BsPersonFillCheck } from "react-icons/bs";
 
 interface Todo {
   id: number;
@@ -25,11 +26,20 @@ function Todo() {
     parsedUser.map((value: User) => {
       if (value.isLoggedIn == false) {
         navigate("/");
+      } else {
+        if (value.username == username) {
+          console.log("Hello how are you");
+        }
       }
     });
   } else {
     navigate("/");
   }
+
+  const handleLogout = () => {
+    const userData: string | null = localStorage.getItem("users");
+  };
+
   return (
     <div className="app_todo">
       <div className="todo_cover">
@@ -42,13 +52,45 @@ function Todo() {
       <div className="todo_section">
         <div className="card_contain">
           <div className="todo_card">
+            <h1>hqjkwjsakjkjdklewjji</h1>
+          </div>
+          <div className="todo_card">
+            <h1></h1>
+          </div>
+          <div className="todo_card">
+            <h1></h1>
+          </div>
+          <div className="todo_card">
+            <h1></h1>
+          </div>
+          <div className="todo_card">
+            <h1></h1>
+          </div>
+          <div className="todo_card">
+            <h1></h1>
+          </div>
+          <div className="todo_card">
+            <h1></h1>
+          </div>
+          <div className="todo_card">
+            <h1></h1>
+          </div>
+          <div className="todo_card">
+            <h1></h1>
+          </div>
+          <div className="todo_card">
             <h1></h1>
           </div>
         </div>
         <div className="todo_nav">
-          <p className="nav_act">Active</p>
-          <p className="nav_cop">Completed</p>
-          <p className="nav_cop">Edit</p>
+          <p className="nav_act">
+            <BsPersonFillCheck />
+            {username}
+          </p>
+          <p onClick={handleLogout} className="nav_cop">
+            logout
+          </p>
+          {/* <p className="nav_cop">Edit</p> */}
         </div>
       </div>
     </div>
