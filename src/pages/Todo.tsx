@@ -1,5 +1,5 @@
 import "./Todo.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 interface Todo {
   id: number;
@@ -16,6 +16,9 @@ interface User {
 
 function Todo() {
   const navigate = useNavigate();
+  const { username } = useParams();
+  console.log(username);
+
   const user = localStorage.getItem("users");
   if (user) {
     let parsedUser = JSON.parse(user);

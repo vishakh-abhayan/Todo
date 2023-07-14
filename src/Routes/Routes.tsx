@@ -14,7 +14,7 @@ function Routes(): JSX.Element {
       element: <Singup />,
     },
     {
-      path: "/todo",
+      path: "/todo/:username",
       element: <Todo />,
     },
   ]);

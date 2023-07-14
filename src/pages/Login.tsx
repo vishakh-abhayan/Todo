@@ -46,7 +46,7 @@ function Login() {
           if (value.password === password) {
             value.isLoggedIn = true;
             localStorage.setItem("users", JSON.stringify(parsedUser));
-            navigate("/todo");
+            navigate("/todo/" + value.username);
           } else {
             setErrorMessage("Incorrect password");
           }
