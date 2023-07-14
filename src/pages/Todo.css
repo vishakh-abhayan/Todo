@@ -118,12 +118,14 @@
   border-right: hidden;
   display: flex;
   align-items: end;
-  padding-left: 20px;
   font-family: fantasy;
   font-size: 15px;
   color: rgb(144, 142, 142);
+  overflow-x: hidden;
 }
-
+.todo_card h1 {
+  margin-left: 10px;
+}
 .todo_nav {
   height: 4rem;
   width: 35rem;
