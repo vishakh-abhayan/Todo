@@ -1,6 +1,8 @@
 import "./Todo.css";
 import { useNavigate, useParams } from "react-router-dom";
 import { BsPersonCircle } from "react-icons/bs";
+import { IoTrashBin } from "react-icons/io5";
+import { FaPen } from "react-icons/fa";
 import { useEffect, useState } from "react";
 
 interface Todo {
@@ -86,6 +88,20 @@ function Todo() {
     setParsedData(updatedData);
   };
 
+  const handleDelete = (todoId: number) => {
+    const updatedData = parsedData.map((value: User) => {
+      if (value.username === username) {
+        return {
+          ...value,
+          todos: value.todos.filter((todo: Todo) => todo.id !== todoId),
+        };
+      }
+      return value;
+    });
+    setParsedData(updatedData);
+    localStorage.setItem("users", JSON.stringify(updatedData));
+  };
+
   const currentUser = parsedData.find(
     (value: User) => value.username === username
   );
@@ -104,7 +120,9 @@ function Todo() {
             value={todo}
             onChange={handleInput}
           />
-          <button type="submit" className="todo_check"></button>
+          <button type="submit" className="todo_check">
+            <FaPen size={25} />
+          </button>
         </form>
       </div>
       <div className="todo_section">
@@ -117,6 +135,11 @@ function Todo() {
               >
                 {todo.title}
               </h1>
+              <IoTrashBin
+                className="todo_bin"
+                onClick={() => handleDelete(todo.id)}
+                size={20}
+              />
             </div>
           ))}
         </div>

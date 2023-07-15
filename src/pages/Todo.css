@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light&family=Ysabeau+Infant:ital,wght@1,300&display=swap");
+
 .app_todo {
   height: 100vh;
   /* background-color: #f1f1f1; */
@@ -56,7 +58,7 @@
   box-shadow: gray 10px;
   z-index: 1;
   font-size: 2rem;
-  font-family: fantasy;
+  font-family: "Ysabeau Infant", sans-serif;
   outline: none;
   padding-left: 1rem;
   color: rgb(144, 142, 142);
@@ -64,26 +66,12 @@
 }
 .todo_check {
   background-color: #ffffff;
-  border-width: 3px;
-  border-style: solid;
-  border-color: rgba(225, 225, 225, 0.655);
-  height: 25px;
-  width: 25px;
-  border-radius: 50%;
   position: relative;
-  top: -10px;
+  top: -20px;
   left: -50px;
+  margin-bottom: 10px;
   z-index: 5;
-}
-.todo_check:hover {
-  background: linear-gradient(
-    270deg,
-    rgba(0, 219, 222, 0.5) 0%,
-    rgba(252, 0, 255, 0.6) 100%
-  );
   border: none;
-  height: 29px;
-  width: 29px;
 }
 
 .todo_section {
@@ -118,13 +106,19 @@
   border-right: hidden;
   display: flex;
   align-items: end;
-  font-family: fantasy;
+  font-family: "Ysabeau Infant", sans-serif;
   font-size: 15px;
   color: rgb(144, 142, 142);
   overflow-x: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .todo_card h1 {
   margin-left: 10px;
+}
+.todo_bin {
+  margin-right: 15px;
 }
 .todo_nav {
   height: 4rem;
