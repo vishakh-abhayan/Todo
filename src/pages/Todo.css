@@ -141,6 +141,13 @@
   font-family: monospace;
   color: rgb(130, 216, 129);
 }
+.todo_true {
+  text-decoration: line-through;
+}
+.todo_fales {
+  text-decoration: none;
+}
+
 .nav_act {
   color: rgb(216, 177, 129);
 }

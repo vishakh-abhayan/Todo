@@ -1,6 +1,6 @@
 import "./Todo.css";
 import { useNavigate, useParams } from "react-router-dom";
-import { BsPersonFillCheck, BsDashSquare } from "react-icons/bs";
+import { BsPersonCircle } from "react-icons/bs";
 import { useEffect, useState } from "react";
 
 interface Todo {
@@ -59,25 +59,26 @@ function Todo() {
       completed: false,
     };
 
+    setTodo("");
     parsedData.map((value: User) => {
       value.todos.push(userTodo);
-      localStorage.setItem("users", JSON.stringify(parsedData));
     });
-    setTodo("");
+    localStorage.setItem("users", JSON.stringify(parsedData));
   };
 
-  // if (user) {
-  //   let parsedUser = JSON.parse(user);
-  //   parsedUser.map((value: User) => {
-  //     if (value.isLoggedIn == false || username !== value.username) {
-  //       navigate("/");
-  //       return null;
-  //     }
-  //   });
-  // } else {
-  //   navigate("/");
-  //   return null;
-  // }
+  const handleTodoClick = (clickedTodo: Todo) => {
+    const updatedData = parsedData.map((value: User) => {
+      return {
+        ...value,
+        todos: value.todos.map((todo: Todo) =>
+          todo.id === clickedTodo.id
+            ? { ...todo, completed: !todo.completed }
+            : todo
+        ),
+      };
+    });
+    setParsedData(updatedData);
+  };
 
   return (
     <div className="app_todo">
@@ -86,7 +87,12 @@ function Todo() {
       </div>
       <div className="input_contain">
         <form onSubmit={handleTodo}>
-          <input className="do_input" type="text" onChange={handleInput} />
+          <input
+            className="do_input"
+            type="text"
+            value={todo}
+            onChange={handleInput}
+          />
           <button type="submit" className="todo_check"></button>
         </form>
       </div>
@@ -95,20 +101,24 @@ function Todo() {
           {parsedData.map((value: User) => {
             return value.todos.map((todo: Todo) => (
               <div key={todo.id} className="todo_card">
-                <h1>{todo.title}</h1>
+                <h1
+                  onClick={() => handleTodoClick(todo)}
+                  className={todo.completed ? "todo_true" : "todo_fales"}
+                >
+                  {todo.title}
+                </h1>
               </div>
             ));
           })}
         </div>
         <div className="todo_nav">
-          <p className="nav_act">
-            <BsPersonFillCheck />
+          <p className="nav_cop">
+            <BsPersonCircle />
             {username}
           </p>
-          <p onClick={handleLogout} className="nav_cop">
+          <p onClick={handleLogout} className="nav_act">
             logout
           </p>
-          {/* <p className="nav_cop">Edit</p> */}
         </div>
       </div>
     </div>
