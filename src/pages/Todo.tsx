@@ -61,24 +61,35 @@ function Todo() {
 
     setTodo("");
     parsedData.map((value: User) => {
-      value.todos.push(userTodo);
+      if (value.username === username) {
+        value.todos.push(userTodo);
+      }
+      return value;
     });
     localStorage.setItem("users", JSON.stringify(parsedData));
   };
 
   const handleTodoClick = (clickedTodo: Todo) => {
     const updatedData = parsedData.map((value: User) => {
-      return {
-        ...value,
-        todos: value.todos.map((todo: Todo) =>
-          todo.id === clickedTodo.id
-            ? { ...todo, completed: !todo.completed }
-            : todo
-        ),
-      };
+      if (value.username === username) {
+        return {
+          ...value,
+          todos: value.todos.map((todo: Todo) =>
+            todo.id === clickedTodo.id
+              ? { ...todo, completed: !todo.completed }
+              : todo
+          ),
+        };
+      }
+      return value;
     });
     setParsedData(updatedData);
   };
+
+  const currentUser = parsedData.find(
+    (value: User) => value.username === username
+  );
+  const userTodos = currentUser ? currentUser.todos : [];
 
   return (
     <div className="app_todo">
@@ -98,18 +109,16 @@ function Todo() {
       </div>
       <div className="todo_section">
         <div className="card_contain">
-          {parsedData.map((value: User) => {
-            return value.todos.map((todo: Todo) => (
-              <div key={todo.id} className="todo_card">
-                <h1
-                  onClick={() => handleTodoClick(todo)}
-                  className={todo.completed ? "todo_true" : "todo_fales"}
-                >
-                  {todo.title}
-                </h1>
-              </div>
-            ));
-          })}
+          {userTodos.map((todo: Todo) => (
+            <div key={todo.id} className="todo_card">
+              <h1
+                onClick={() => handleTodoClick(todo)}
+                className={todo.completed ? "todo_true" : "todo_fales"}
+              >
+                {todo.title}
+              </h1>
+            </div>
+          ))}
         </div>
         <div className="todo_nav">
           <p className="nav_cop">

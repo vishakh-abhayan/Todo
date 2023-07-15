@@ -153,5 +153,6 @@
 }
 .nav_cop {
   color: rgb(130, 216, 129);
+  display: flex;
   cursor: pointer;
 }
