@@ -1,6 +1,7 @@
 import "./Todo.css";
 import { useNavigate, useParams } from "react-router-dom";
 import { BsPersonFillCheck, BsDashSquare } from "react-icons/bs";
+import { useEffect, useState } from "react";
 
 interface Todo {
   id: number;
@@ -18,35 +19,65 @@ interface User {
 function Todo() {
   const navigate = useNavigate();
   const { username } = useParams();
-  console.log(username);
+  const [todo, setTodo] = useState("");
+  const [parsedData, setParsedData] = useState<User[]>([]);
 
-  const user = localStorage.getItem("users");
-  if (user) {
-    let parsedUser = JSON.parse(user);
-    parsedUser.map((value: User) => {
-      if (value.isLoggedIn == false) {
-        navigate("/");
-      } else {
-        if (value.username == username) {
-          console.log("Hello how are you");
-        }
-      }
-    });
-  } else {
-    navigate("/");
-  }
+  useEffect(() => {
+    const storedData = localStorage.getItem("users");
+    if (storedData) {
+      const parsedStoredData: User[] = JSON.parse(storedData);
+      setParsedData(parsedStoredData);
+    }
+  }, []);
 
   const handleLogout = () => {
-    const userData: any = localStorage.getItem("users");
-    let pasrsedData: User[] = JSON.parse(userData);
-    pasrsedData.map((value: User) => {
+    parsedData.map((value: User) => {
       if (value.isLoggedIn == true) {
         value.isLoggedIn = false;
-        localStorage.setItem("users", JSON.stringify(pasrsedData));
+        localStorage.setItem("users", JSON.stringify(parsedData));
+        navigate("/");
+      } else {
         navigate("/");
       }
     });
   };
+
+  const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setTodo(e.target.value);
+    console.log(todo);
+  };
+
+  const handleTodo = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (todo.trim() === "") {
+      return;
+    }
+
+    const userTodo: Todo = {
+      id: Date.now(),
+      title: todo,
+      completed: false,
+    };
+
+    parsedData.map((value: User) => {
+      value.todos.push(userTodo);
+      localStorage.setItem("users", JSON.stringify(parsedData));
+    });
+    setTodo("");
+  };
+
+  // if (user) {
+  //   let parsedUser = JSON.parse(user);
+  //   parsedUser.map((value: User) => {
+  //     if (value.isLoggedIn == false || username !== value.username) {
+  //       navigate("/");
+  //       return null;
+  //     }
+  //   });
+  // } else {
+  //   navigate("/");
+  //   return null;
+  // }
 
   return (
     <div className="app_todo">
@@ -54,42 +85,20 @@ function Todo() {
         <h1 className="app_title ">ToDoNow</h1>
       </div>
       <div className="input_contain">
-        <input className="do_input" type="text" />
-        <button className="todo_check"></button>
+        <form onSubmit={handleTodo}>
+          <input className="do_input" type="text" onChange={handleInput} />
+          <button type="submit" className="todo_check"></button>
+        </form>
       </div>
       <div className="todo_section">
         <div className="card_contain">
-          <div className="todo_card">
-            <h1>hqjkwjsakjkjdklewjji</h1>
-          </div>
-          <div className="todo_card">
-            <h1></h1>
-            <BsDashSquare />
-          </div>
-          <div className="todo_card">
-            <h1></h1>
-          </div>
-          <div className="todo_card">
-            <h1></h1>
-          </div>
-          <div className="todo_card">
-            <h1></h1>
-          </div>
-          <div className="todo_card">
-            <h1></h1>
-          </div>
-          <div className="todo_card">
-            <h1></h1>
-          </div>
-          <div className="todo_card">
-            <h1></h1>
-          </div>
-          <div className="todo_card">
-            <h1></h1>
-          </div>
-          <div className="todo_card">
-            <h1></h1>
-          </div>
+          {parsedData.map((value: User) => {
+            return value.todos.map((todo: Todo) => (
+              <div key={todo.id} className="todo_card">
+                <h1>{todo.title}</h1>
+              </div>
+            ));
+          })}
         </div>
         <div className="todo_nav">
           <p className="nav_act">
