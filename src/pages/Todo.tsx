@@ -28,6 +28,7 @@ function Todo() {
     const storedData = localStorage.getItem("users");
     if (storedData) {
       const parsedStoredData: User[] = JSON.parse(storedData);
+
       setParsedData(parsedStoredData);
     }
   }, []);
@@ -46,7 +47,7 @@ function Todo() {
 
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     setTodo(e.target.value);
-    console.log(todo);
+    // console.log(todo);
   };
 
   const handleTodo = (e: React.FormEvent<HTMLFormElement>) => {

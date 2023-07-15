@@ -72,6 +72,7 @@
   margin-bottom: 10px;
   z-index: 5;
   border: none;
+  cursor: pointer;
 }
 
 .todo_section {
@@ -116,9 +117,11 @@
 }
 .todo_card h1 {
   margin-left: 10px;
+  cursor: pointer;
 }
 .todo_bin {
   margin-right: 15px;
+  cursor: pointer;
 }
 .todo_nav {
   height: 4rem;
@@ -144,9 +147,9 @@
 
 .nav_act {
   color: rgb(216, 177, 129);
+  cursor: pointer;
 }
 .nav_cop {
   color: rgb(130, 216, 129);
   display: flex;
-  cursor: pointer;
 }

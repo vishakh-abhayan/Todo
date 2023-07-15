@@ -1,9 +1,46 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  useParams,
+} from "react-router-dom";
+import { useState, useEffect } from "react";
 import Login from "../pages/Login";
 import Singup from "../pages/Singup";
-import Todo from "../pages/Todo";
+import TodoPage from "../pages/Todo";
 
-function Routes(): JSX.Element {
+interface Todo {
+  id: number;
+  title: string;
+  completed: boolean;
+}
+
+interface User {
+  username: string;
+  password: string;
+  isLoggedIn: boolean;
+  todos: Todo[];
+}
+
+function Routes() {
+  const [parsedData, setParsedData] = useState<User[]>([]);
+  const { username } = useParams();
+
+  useEffect(() => {
+    const storedData = localStorage.getItem("users");
+    if (storedData) {
+      const parsedStoredData: User[] = JSON.parse(storedData);
+      setParsedData(parsedStoredData);
+    }
+  }, []);
+
+  parsedData.map((value: User) => {
+    if (value.username === username) {
+      if (value.isLoggedIn === false) {
+        return <Login />;
+      }
+    }
+  });
+
   const router = createBrowserRouter([
     {
       path: "/",
@@ -15,7 +52,7 @@ function Routes(): JSX.Element {
     },
     {
       path: "/todo/:username",
-      element: <Todo />,
+      element: <TodoPage />,
     },
   ]);
   return <RouterProvider router={router} />;
