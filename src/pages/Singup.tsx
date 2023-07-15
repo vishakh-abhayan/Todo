@@ -2,7 +2,6 @@ import { BsArrowLeft, BsPersonFillAdd } from "react-icons/bs";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Auth.css";
-import Todo from "./Todo";
 
 interface Todo {
   id: number;
