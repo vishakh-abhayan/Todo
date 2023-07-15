@@ -24,10 +24,19 @@ function Todo() {
   const [todo, setTodo] = useState("");
   const [parsedData, setParsedData] = useState<User[]>([]);
 
+  parsedData.map((value: User) => {
+    if (value.username === username) {
+      if (value.isLoggedIn === false) {
+        navigate("/");
+      }
+    }
+  });
+
   useEffect(() => {
     const storedData = localStorage.getItem("users");
     if (storedData) {
       const parsedStoredData: User[] = JSON.parse(storedData);
+
       setParsedData(parsedStoredData);
     }
   }, []);
@@ -46,7 +55,7 @@ function Todo() {
 
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     setTodo(e.target.value);
-    console.log(todo);
+    // console.log(todo);
   };
 
   const handleTodo = (e: React.FormEvent<HTMLFormElement>) => {

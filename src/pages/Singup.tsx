@@ -51,7 +51,7 @@ function Singup() {
 
     // Retrieve existing array from localStorage
     const existingUsers = JSON.parse(localStorage.getItem("users") || "[]");
-    console.log(existingUsers);
+    // console.log(existingUsers);
 
     // Push newUser to the existing array
     existingUsers.push(newUser);

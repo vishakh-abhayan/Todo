@@ -1,9 +1,10 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
 import Login from "../pages/Login";
 import Singup from "../pages/Singup";
-import Todo from "../pages/Todo";
+import TodoPage from "../pages/Todo";
 
-function Routes(): JSX.Element {
+function Routes() {
   const router = createBrowserRouter([
     {
       path: "/",
@@ -15,7 +16,7 @@ function Routes(): JSX.Element {
     },
     {
       path: "/todo/:username",
-      element: <Todo />,
+      element: <TodoPage />,
     },
   ]);
   return <RouterProvider router={router} />;

@@ -1,13 +1,8 @@
 import "./App.css";
-
 import Routes from "./Routes/Routes";
 
 function App(): JSX.Element {
-  return (
-    <>
-      <Routes />
-    </>
-  );
+  return <Routes />;
 }
 
 export default App;

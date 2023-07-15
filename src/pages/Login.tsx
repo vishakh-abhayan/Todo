@@ -35,14 +35,14 @@ function Login() {
     e.preventDefault();
 
     const user = localStorage.getItem("users");
-    console.log(user);
+    // console.log(user);
     if (user) {
       let parsedUser = JSON.parse(user);
-      console.log(parsedUser);
+      // console.log(parsedUser);
       parsedUser.map((value: User) => {
-        console.log(value);
+        // console.log(value);
         if (value.username === username) {
-          console.log(value.password, "***");
+          // console.log(value.password, "***");
           if (value.password === password) {
             value.isLoggedIn = true;
             localStorage.setItem("users", JSON.stringify(parsedUser));
