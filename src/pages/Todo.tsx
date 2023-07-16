@@ -29,6 +29,8 @@ function Todo() {
       if (value.isLoggedIn === false) {
         navigate("/");
       }
+    } else {
+      navigate("/");
     }
   });
 
@@ -38,6 +40,8 @@ function Todo() {
       const parsedStoredData: User[] = JSON.parse(storedData);
 
       setParsedData(parsedStoredData);
+    } else {
+      navigate("/");
     }
   }, []);
 
