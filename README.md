@@ -16,10 +16,10 @@ TodoNow is a simple todo list application built with React and React Router. It 
 
 ## Technologies Used
 
-- React: A JavaScript library for building user interfaces.
-- React Router: A routing library for single-page applications built with React.
-- TypeScript: A statically typed superset of JavaScript that compiles to plain JavaScript.
-- CSS: Stylesheet language for styling the application.
+- React
+- React Router
+- TypeScript
+- CSS
 
 ## Getting Started
 
