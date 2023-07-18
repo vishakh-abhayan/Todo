@@ -1,7 +1,7 @@
 
 
 
-# TodoNow
+# TodoNow✨
 ![Vite + React + TS (1)](https://github.com/vishakh-abhayan/TodoNow/assets/94307781/b69a1d7e-04f2-42b8-b2c0-1730c8208f6e)
 
 
@@ -62,7 +62,7 @@ TodoNow is a simple todo list application built with React and React Router. It 
 
 ## Contributing
 
-Contributions are welcome! If you find any issues or have suggestions for improvements, please feel free to open an issue or submit a pull request.
+Contributions are welcome! If you find any issues or have suggestions for improvements, please feel free to open an issue or submit a pull request.😊
 
 
 
