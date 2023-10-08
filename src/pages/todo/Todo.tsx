@@ -95,9 +95,9 @@ function Todo() {
           ))}
         </div>
         <div className="todo_nav">
-          <p onClick={() => handleDeleteAll()} className="nav_act">
+          {/* <p onClick={() => handleDeleteAll()} className="nav_act">
             Delete All
-          </p>
+          </p> */}
           <p className="nav_cop">(Mark it's done by clicking on it)</p>
         </div>
       </div>

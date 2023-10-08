@@ -10,6 +10,10 @@ function Routes() {
       element: <TodoPage />,
       errorElement: <ErrorPage />,
     },
+    {
+      path: "*",
+      element: <ErrorPage />,
+    },
   ]);
   return <RouterProvider router={router} />;
 }
