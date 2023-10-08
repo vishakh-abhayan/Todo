@@ -55,10 +55,10 @@ function Todo() {
     setTodos(updatedTodos);
   };
 
-  const handleDeleteAll = () => {
-    // localStorage.clear();
-    setTodos([]);
-  };
+  // const handleDeleteAll = () => {
+  //   // localStorage.clear();
+  //   setTodos([]);
+  // };
 
   return (
     <div className="app_todo">
