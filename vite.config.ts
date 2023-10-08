@@ -3,33 +3,33 @@ import react from "@vitejs/plugin-react";
 import { VitePWA, VitePWAOptions } from "vite-plugin-pwa";
 
 const manifestForPlugin: Partial<VitePWAOptions> = {
-  registerType: "prompt",
+  registerType: "autoUpdate",
   includeAssets: ["favicon.ico", "apple-touch-icon.png", "masked-icon.svg"],
   manifest: {
     name: "React-vite-app",
     short_name: "react-vite-app",
-    description: "I am a simple vite app",
+    description: "I am a simple Todo app",
     icons: [
       {
-        src: "/android-chrome-192x192.png",
-        sizes: "192x192",
+        src: "/list_23876352.png",
+        sizes: "256x256",
         type: "image/png",
         purpose: "favicon",
       },
       {
-        src: "/android-chrome-512x512.png",
+        src: "/list_23876351.png",
         sizes: "512x512",
         type: "image/png",
         purpose: "favicon",
       },
       {
-        src: "/apple-touch-icon.png",
-        sizes: "180x180",
+        src: "/list_23876354.png",
+        sizes: "256x256",
         type: "image/png",
         purpose: "apple touch icon",
       },
       {
-        src: "/maskable_icon.png",
+        src: "/list_23876351.png",
         sizes: "512x512",
         type: "image/png",
         purpose: "any maskable",
