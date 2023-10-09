@@ -76,6 +76,12 @@ function Todo() {
     setTodos(updatedTodos);
   };
 
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      handleAddTodo();
+    }
+  };
+
   // const handleDeleteAll = () => {
   //   // localStorage.clear();
   //   setTodos([]);
@@ -93,6 +99,7 @@ function Todo() {
           type="text"
           value={todo}
           onChange={handleInput}
+          onKeyPress={handleKeyPress}
         />
         <button
           type="submit"
