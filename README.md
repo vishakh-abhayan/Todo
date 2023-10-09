@@ -1,7 +1,7 @@
 
 
 
-# TodoNow✨
+# Todo✨
 ![Vite + React + TS (1)](https://github.com/vishakh-abhayan/TodoNow/assets/94307781/b69a1d7e-04f2-42b8-b2c0-1730c8208f6e)
 
 
