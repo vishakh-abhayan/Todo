@@ -2,11 +2,11 @@
 
 
 # Todo✨ 
-<a href="https://www.producthunt.com/posts/todo-c5a4976f-5e59-4bd1-a0e3-c0c68aaaa7e8?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-todo&#0045;c5a4976f&#0045;5e59&#0045;4bd1&#0045;a0e3&#0045;c0c68aaaa7e8" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=418983&theme=neutral" alt="Todo - Your&#0032;Personal&#0032;Task&#0032;Manager&#0032;for&#0032;a&#0032;Productive&#0032;Day | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
+
 
 ![Vite + React + TS (1)](https://github.com/vishakh-abhayan/TodoNow/assets/94307781/b69a1d7e-04f2-42b8-b2c0-1730c8208f6e)
 
-
+<a href="https://www.producthunt.com/posts/todo-c5a4976f-5e59-4bd1-a0e3-c0c68aaaa7e8?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-todo&#0045;c5a4976f&#0045;5e59&#0045;4bd1&#0045;a0e3&#0045;c0c68aaaa7e8" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=418983&theme=neutral" alt="Todo - Your&#0032;Personal&#0032;Task&#0032;Manager&#0032;for&#0032;a&#0032;Productive&#0032;Day | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
 
 TodoNow is a simple todo list application built with React and React Router. It allows users to create, manage, and track their tasks.
 
