@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { toast } from "react-toastify";
 import "./Todo.css";
-
+import { ToastContainer } from "react-toastify";
 import { IoTrashBin } from "react-icons/io5";
 import { FaPen } from "react-icons/fa";
 
@@ -40,12 +41,32 @@ function Todo() {
       };
       setTodos([...todos, newTodo]);
       setTodo("");
+      toast.success("Todo created successfully", {
+        position: "bottom-center",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
     }
   };
 
   const handleDelete = (id: number) => {
     const updatedTodos = todos.filter((todo) => todo.id !== id);
     setTodos(updatedTodos);
+    toast.error("Todo deleted successfully", {
+      position: "bottom-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
   };
 
   const handleToggleComplete = (id: number) => {
@@ -73,7 +94,13 @@ function Todo() {
           value={todo}
           onChange={handleInput}
         />
-        <button type="submit" className="todo_check" onClick={handleAddTodo}>
+        <button
+          type="submit"
+          className="todo_check"
+          onClick={() => {
+            handleAddTodo();
+          }}
+        >
           <FaPen size={25} />
         </button>
       </div>
@@ -102,6 +129,7 @@ function Todo() {
           <p className="nav_cop">(Mark it's done by clicking on it)</p>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 }
