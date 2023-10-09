@@ -64,6 +64,16 @@
   color: rgb(144, 142, 142);
 }
 
+::placeholder {
+  color: rgb(111, 111, 111);
+  opacity: 0.4; /* Firefox */
+}
+
+::-ms-input-placeholder {
+  /* Edge 12 -18 */
+  color: rgba(125, 125, 125, 0.425);
+}
+
 .todo_check {
   background-color: #ffffff;
   position: relative;

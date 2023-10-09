@@ -67,6 +67,7 @@ function Todo() {
       </div>
       <div className="input_contain">
         <input
+          placeholder="type here ...."
           className="do_input"
           type="text"
           value={todo}

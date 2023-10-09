@@ -3,11 +3,16 @@ import react from "@vitejs/plugin-react";
 import { VitePWA, VitePWAOptions } from "vite-plugin-pwa";
 
 const manifestForPlugin: Partial<VitePWAOptions> = {
-  registerType: "autoUpdate",
-  includeAssets: ["favicon.ico", "apple-touch-icon.png", "masked-icon.svg"],
+  registerType: "prompt",
+  includeAssets: [
+    "favicon.ico",
+    "apple-touch-icon.png",
+    "masked-icon.svg",
+    "ken-cheung-KonWFWUaAuk-unsplash.webp",
+  ],
   manifest: {
-    name: "React-vite-app",
-    short_name: "react-vite-app",
+    name: "ToDo",
+    short_name: "ToDo",
     description: "I am a simple Todo app",
     icons: [
       {
