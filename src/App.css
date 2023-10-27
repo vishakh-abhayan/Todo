@@ -1,4 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light&family=Ysabeau+Infant:ital,wght@1,300&display=swap");
 * {
   margin: 0;
   padding: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
 }

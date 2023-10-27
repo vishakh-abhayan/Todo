@@ -1,21 +1,18 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Login from "../pages/Login";
-import Singup from "../pages/Singup";
-import Todo from "../pages/Todo";
 
-function Routes(): JSX.Element {
+import TodoPage from "../pages/todo/Todo";
+import ErrorPage from "../pages/404/ErrorPage";
+
+function Routes() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Login />,
+      element: <TodoPage />,
+      errorElement: <ErrorPage />,
     },
     {
-      path: "/auth",
-      element: <Singup />,
-    },
-    {
-      path: "/todo/:username",
-      element: <Todo />,
+      path: "*",
+      element: <ErrorPage />,
     },
   ]);
   return <RouterProvider router={router} />;
