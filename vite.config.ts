@@ -6,8 +6,8 @@ const manifestForPlugin: Partial<VitePWAOptions> = {
   registerType: "prompt",
   includeAssets: [
     "favicon.ico",
-    "apple-touch-icon.png",
-    "masked-icon.svg",
+    "TodoIcon2.png",
+    "todoico5.png",
     "ken-cheung-KonWFWUaAuk-unsplash.webp",
   ],
   manifest: {
@@ -16,25 +16,25 @@ const manifestForPlugin: Partial<VitePWAOptions> = {
     description: "I am a simple Todo app",
     icons: [
       {
-        src: "/list_23876352.png",
+        src: "/TodoIcon2.png",
         sizes: "256x256",
         type: "image/png",
         purpose: "favicon",
       },
       {
-        src: "/list_23876351.png",
+        src: "/todoico5.png",
         sizes: "512x512",
         type: "image/png",
         purpose: "favicon",
       },
       {
-        src: "/list_23876354.png",
+        src: "/TodoIcon2.png",
         sizes: "256x256",
         type: "image/png",
         purpose: "apple touch icon",
       },
       {
-        src: "/list_23876351.png",
+        src: "/todoico5.png",
         sizes: "512x512",
         type: "image/png",
         purpose: "any maskable",
