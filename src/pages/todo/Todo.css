@@ -169,9 +169,8 @@
 
 .nav_act {
   margin-top: 7px;
-  color: white;
   cursor: pointer;
-  background-color: #d88181;
+  color: #d88181;
   padding: 2px;
   border-radius: 3px;
 }

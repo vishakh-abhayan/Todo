@@ -82,10 +82,12 @@ function Todo() {
     }
   };
 
-  // const handleDeleteAll = () => {
-  //   // localStorage.clear();
-  //   setTodos([]);
-  // };
+  const handleDeleteAll = () => {
+    // localStorage.clear();
+    setTodos([]);
+  };
+
+  const characterLimit = window.innerWidth <= 480 ? 20 : undefined;
 
   return (
     <div className="app_todo">
@@ -100,6 +102,7 @@ function Todo() {
           value={todo}
           onChange={handleInput}
           onKeyPress={handleKeyPress}
+          maxLength={characterLimit}
         />
         <button
           type="submit"
@@ -130,10 +133,10 @@ function Todo() {
           ))}
         </div>
         <div className="todo_nav">
-          {/* <p onClick={() => handleDeleteAll()} className="nav_act">
-            Delete All
-          </p> */}
           <p className="nav_cop">(Mark it's done by clicking on it)</p>
+          <p onClick={() => handleDeleteAll()} className="nav_act">
+            Delete All
+          </p>
         </div>
       </div>
       <ToastContainer />
