@@ -82,12 +82,12 @@ function Todo() {
     }
   };
 
-  const handleDeleteAll = () => {
-    // localStorage.clear();
-    setTodos([]);
-  };
+  // const handleDeleteAll = () => {
+  //   // localStorage.clear();
+  //   setTodos([]);
+  // };
 
-  const characterLimit = window.innerWidth <= 480 ? 20 : undefined;
+  const characterLimit = window.innerWidth <= 550 ? 20 : undefined;
 
   return (
     <div className="app_todo">
@@ -134,9 +134,9 @@ function Todo() {
         </div>
         <div className="todo_nav">
           <p className="nav_cop">(Mark it's done by clicking on it)</p>
-          <p onClick={() => handleDeleteAll()} className="nav_act">
+          {/* <p onClick={() => handleDeleteAll()} className="nav_act">
             Delete All
-          </p>
+          </p> */}
         </div>
       </div>
       <ToastContainer />
